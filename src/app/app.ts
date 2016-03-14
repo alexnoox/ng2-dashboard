@@ -36,9 +36,6 @@ import {Home} from './home/home';
         <h1>Hello {{ name }}</h1>
         <ul>
           <li router-active>
-            <a [routerLink]=" ['Index'] ">Index</a>
-          </li>
-          <li router-active>
             <a [routerLink]=" ['Home'] ">Home</a>
           </li>
           <li router-active>
@@ -53,9 +50,9 @@ import {Home} from './home/home';
     </main>
 
     <footer>
-      WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
+      ng2-dashboard by <a [href]="url">@alexnoox</a>
       <div>
-        <img [src]="angularclassLogo" width="10%">
+        <img [src]="angularLogo" width="10%">
       </div>
     </footer>
   `
@@ -67,9 +64,9 @@ import {Home} from './home/home';
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about/about')('About') },
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
+  angularLogo = 'assets/img/angular-logo.png';
   name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  url = 'https://twitter.com/alexnoox';
   constructor() {
   }
 }
