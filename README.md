@@ -18,6 +18,8 @@
 
 ## Getting started
 
+**Install the project**
+
 ```bash
 clone this repo
 # --depth 1 removes all but one .git commit history
@@ -29,9 +31,16 @@ cd ng2-dashboard
 # add required global libraries
 npm install -g typings webpack-dev-server
 
+# Install typing (helps you with auto-completion in editors like 'VS Code')
+typings install
+
 # install the repo with npm
 npm install
+```
 
+**Run it!**
+
+```bash
 # start the frontend webpack server
 npm start
 
