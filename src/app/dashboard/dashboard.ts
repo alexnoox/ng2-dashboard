@@ -28,6 +28,9 @@ export class Dashboard {
     ngOnInit() {
         console.log('hello `Dashboard` component');
         this.socket.connect();
+        this.socket.registerAddWidget().subscribe(widget => {
+            console.log('Dashboard: Received a new widget in the view', widget);
+        });
     }
 
     ngOnDestroy() {
