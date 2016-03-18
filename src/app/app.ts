@@ -4,7 +4,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
-import {Home} from './home/home';
 import {Dashboard} from './dashboard/dashboard';
 
 /*

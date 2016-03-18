@@ -1,4 +1,10 @@
 <div id="dashboard-view">
   <input type="text" [value]="widget.name" (input)="widget.name = $event.target.value" autofocus>
   <button (click)="addWidget()">Add widget</button>
+  
+  <ul>
+    <li *ngFor="#widget of widgets; #i = index">
+        {{widget.name}}
+    </li>
+  </ul>
 </div>

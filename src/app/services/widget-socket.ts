@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class WidgetSocket {
-    public widgetsObservable;
+    private widgetsObservable;
 
     private socket: SocketIOClient.Socket;
 
@@ -12,7 +12,7 @@ export class WidgetSocket {
         this.socket = io.connect('localhost:3001')
         this.socket.on('connect', () => {
             console.log('WidgetSocket: Opened a new socket connection', this.socket.id);
-        })
+        });
     }
 
     disconnect() {

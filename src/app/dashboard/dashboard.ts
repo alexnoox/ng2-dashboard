@@ -19,7 +19,8 @@ import { WidgetSocket } from '../services/widget-socket';
     template: require('./dashboard.html')
 })
 export class Dashboard {
-    public widget = { name: '' };
+    widget = { name: '' };
+    widgets: Array<any> = [];
 
     constructor(public socket: WidgetSocket) {
 
@@ -27,9 +28,12 @@ export class Dashboard {
 
     ngOnInit() {
         console.log('hello `Dashboard` component');
+
         this.socket.connect();
         this.socket.registerAddWidget().subscribe(widget => {
             console.log('Dashboard: Received a new widget in the view', widget);
+            this.widgets.push(widget);
+            console.log('Dashboard: Widgets array', this.widgets);
         });
     }
 
