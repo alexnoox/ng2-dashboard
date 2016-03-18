@@ -5,6 +5,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Home} from './home/home';
+import {Dashboard} from './dashboard/dashboard';
 
 /*
  * App Component
@@ -39,6 +40,9 @@ import {Home} from './home/home';
             <a [routerLink]=" ['Home'] ">Home</a>
           </li>
           <li router-active>
+            <a [routerLink]=" ['Dashboard'] ">Dashboard</a>
+          </li>
+          <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
         </ul>
@@ -53,6 +57,7 @@ import {Home} from './home/home';
       ng2-dashboard by <a [href]="url">@alexnoox</a>
       <div>
         <img [src]="angularLogo" width="10%">
+        <img [src]="maestranoLogo" width="10%">
       </div>
     </footer>
   `
@@ -60,11 +65,13 @@ import {Home} from './home/home';
 @RouteConfig([
   { path: '/',      name: 'Index', component: Home, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: Home },
+  { path: '/dashboard',  name: 'Dashboard',  component: Dashboard },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about/about')('About') },
 ])
 export class App {
   angularLogo = 'assets/img/angular-logo.png';
+  maestranoLogo = 'assets/img/maestrano-logo.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/alexnoox';
   constructor() {
