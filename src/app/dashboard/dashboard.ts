@@ -19,6 +19,7 @@ import { WidgetSocket } from '../services/widget-socket';
     template: require('./dashboard.html')
 })
 export class Dashboard {
+    public widget = { name: '' };
 
     constructor(public socket: WidgetSocket) {
 
@@ -31,6 +32,10 @@ export class Dashboard {
 
     ngOnDestroy() {
         this.socket.disconnect();
+    }
+
+    addWidget() {
+        this.socket.addWidget(this.widget);
     }
 
 }

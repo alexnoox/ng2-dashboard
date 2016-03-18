@@ -1,3 +1,4 @@
 <div id="dashboard-view">
-  
+  <input type="text" [value]="widget.name" (input)="widget.name = $event.target.value" autofocus>
+  <button (click)="addWidget()">Add widget</button>
 </div>

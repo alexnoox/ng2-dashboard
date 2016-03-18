@@ -5,9 +5,9 @@ var io = require('socket.io')(http);
 io.on('connection', function(socket){
   console.log('a user connected', socket.id);
   
-  socket.on('new widget', function(widget){
+  socket.on('add widget', function(widget){
+    console.log('add widget: ' + widget);
     io.emit('broadcast widget', widget);
-    console.log('new widget: ' + widget);
   });
   
   socket.on('disconnect', function(){
