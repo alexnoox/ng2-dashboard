@@ -37,9 +37,6 @@ import {Dashboard} from './dashboard/dashboard';
         <h1>Hello {{ name }}</h1>
         <ul>
           <li router-active>
-            <a [routerLink]=" ['Home'] ">Home</a>
-          </li>
-          <li router-active>
             <a [routerLink]=" ['Dashboard'] ">Dashboard</a>
           </li>
           <li router-active>
@@ -63,18 +60,18 @@ import {Dashboard} from './dashboard/dashboard';
   `
 })
 @RouteConfig([
-  { path: '/',      name: 'Index', component: Home, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: Home },
+  { path: '/',      name: 'Dashboard', component: Dashboard, useAsDefault: true },
   { path: '/dashboard',  name: 'Dashboard',  component: Dashboard },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about/about')('About') },
 ])
 export class App {
+  name = 'Angular 2 Webpack Starter';
   angularLogo = 'assets/img/angular-logo.png';
   maestranoLogo = 'assets/img/maestrano-logo.png';
-  name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/alexnoox';
   constructor() {
+    console.log('Started angular2 app');
   }
 }
 
