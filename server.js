@@ -6,7 +6,7 @@ io.on('connection', function(socket){
   console.log('A user connected', socket.id);
   
   socket.on('add widget', function(widget){
-    console.log('Received a new widget! ', widget);
+    console.log('Received a new widget! ', widget, 'from socket', socket.id);
     io.emit('broadcast widget', widget);
   });
   
