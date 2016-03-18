@@ -32,8 +32,11 @@ npm install -g typings webpack-dev-server
 # install the repo with npm
 npm install
 
-# start the server
+# start the frontend webpack server
 npm start
+
+# start the backend node server
+npm run backend
 ```
 
 Go to http://0.0.0.0:3000 or http://localhost:3000 in your browser

@@ -36,6 +36,7 @@
     "ci": "npm run e2e && npm run test",
     "docs": "typedoc --options typedoc.json --exclude **/*.spec.ts ./src/",
     "start": "npm run server",
+    "backend": "node server.js",
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",
     "preversion": "npm test",
@@ -47,7 +48,9 @@
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.3",
     "es7-reflect-metadata": "^1.6.0",
+    "express": "^4.13.4",
     "rxjs": "5.0.0-beta.2",
+    "socket.io": "^1.4.5",
     "zone.js": "0.5.15"
   },
   "devDependencies": {
